@@ -47,7 +47,7 @@ r2 = r2_score(y_test, y_pred)
 
 
 #league
-print("\nEVALUATION")
+print("\nEvaluation")
 print("--------------------------------------------------------------------")
 print("Test set size: ", len(y_test))
 print("Training iterations run: ", model.n_iter_)
@@ -82,4 +82,19 @@ else:
     print("\nNo Lakers rows found in this test split.")
 
 #run model on full lakers ds and not just test splits
-#do a few actual named players for job relation to job?
+lakers_full = df["playerteamName"] == "Lakers"
+df_lakers_full = df[lakers_full]
+X_lakers_full = df_lakers_full[feature_cols]
+y_lakers_full = df_lakers_full["points"]
+y_lakers_full_pred = model.predict(X_lakers_full)
+ 
+mae_lf = mean_absolute_error(y_lakers_full, y_lakers_full_pred)
+rmse_lf = np.sqrt(mean_squared_error(y_lakers_full, y_lakers_full_pred))
+r2_lf = r2_score(y_lakers_full, y_lakers_full_pred)
+
+print("\nLakers Evaluation (all seasons)")
+print("--------------------------------------------------------------------")
+print("Test set size: ", len(y_lakers))
+print("MAE: ", round(mae_lf, 4))
+print("RMSE: ", round(rmse_lf, 4))
+print("R2 Score: ", round(r2_lf, 4))
