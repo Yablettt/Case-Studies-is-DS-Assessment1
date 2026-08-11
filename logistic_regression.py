@@ -16,7 +16,7 @@ print("Nulls: \n",df.isnull().sum())
 # drop rows with missing stats
 df = df.dropna(subset=["PTS_home", "FG_PCT_home", "FT_PCT_home", "FG3_PCT_home", "AST_home", "REB_home", "PTS_away", "FG_PCT_away", "FT_PCT_away", "FG3_PCT_away", "AST_away", "REB_away",])
 
-print("After removing missing rows: ", df.shape)
+print("Shape after removing missing rows: ", df.shape)
 
 # create features
 df["FG_PCT_diff"] = df["FG_PCT_home"] - df["FG_PCT_away"]
