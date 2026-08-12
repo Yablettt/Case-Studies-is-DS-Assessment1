@@ -1,8 +1,13 @@
+#References
+# Mlpregressor (no date) scikit. Available at: https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html (Accessed: 08 August 2026). 
+# 1.17. neural network models (supervised) (no date) scikit. Available at: https://scikit-learn.org/stable/modules/neural_networks_supervised.html#neural-networks-supervised (Accessed: 08 August 2026). 
+#22. neural networks with Scikit (no date) 22. Neural Networks with Scikit | Machine Learning. Available at: https://python-course.eu/machine-learning/neural-networks-with-scikit.php (Accessed: 09 August 2026). 
+
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPRegressor
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
  
 RANDOM_STATE = 50
