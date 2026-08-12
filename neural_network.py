@@ -40,6 +40,7 @@ y = df["points"]
 X_train, X_test, y_train, y_test, df_train, df_test = train_test_split(X, y, df, test_size=0.2, random_state=RANDOM_STATE)
 
 #train the neural network
+# Reference: asked claude what variables to put into mlpregessor. Prompt: I am creating an MLPregressor and assiging it to a variable rn but i dont know what values to put in the brackets, explain what they mean)
 model = MLPRegressor(hidden_layer_sizes=(64, 32), activation="relu", solver="adam", max_iter=300, early_stopping=True, random_state=RANDOM_STATE)
 model.fit(X_train, y_train)
  
